@@ -1,0 +1,263 @@
+﻿@model List<neweadproject.Models.pucitquest>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> PUCIT Test - Logical Reasoning </title>
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="application.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+
+</head>
+<body">
+    
+
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div style="margin-top:10px" class="navbar-header">
+     
+         <img src="logo_mcqprep.png"> </img>      <!-- Navbar may website ka logo insert kia -->
+        
+    </div>
+
+      <div style="margin-top:80px ; float:right" class="navbar-header">
+
+          <a href="/Home/home"> <label style="font-family:Tahoma ; color:white" > Go to Home Page </label> </a>
+
+      </div>
+      </div>
+        </nav>
+
+    
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <h2 style="font-family:Tahoma ; font-size:xx-large ; margin-left:30px ; color:darkblue"> <strong> PUCIT ENTRY TEST PREPARATION > <label style="font-family:Tahoma ; font-size:medium"> &nbsp LOGICAL REASONING </label> </strong> </h2>
+        </div>
+    </nav>
+
+<div class="col-md-3">    
+<div class="list-group">
+  <label style="font-family:Tahoma" class="list-group-item active"> <strong> Subjects: </strong> </label>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_logical_reasoning_p1" class="list-group-item"> <strong> Logical Reasoning  ► </strong> </a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_analytical_reasoning_p1" class="list-group-item">Analytical Reasoning</a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_percentage_p1" class="list-group-item">Quantitative Analysis</a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_english_analogy_p1" class="list-group-item">English</a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_others" class="list-group-item">Others...</a>
+</div>
+    </div>
+
+
+    <div class="col-md-6">
+
+        <label style="font-family:Tahoma ; font-size:medium ; margin-bottom:10px ; margin-top:5px"> Practice Questions: </label>
+    
+        <div class="list-group">
+ 
+
+      @foreach(var s in Model.Where(i=>i.Category=="Logical"))
+      {
+          <div class="list-group-item">
+            <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> @s.Question  </strong> </h5>
+                 <p style="font-family:Tahoma" class="list-group-item-text"> A) @s.OptionA &nbsp &nbsp &nbsp &nbsp	B) @s.OptionB &nbsp &nbsp &nbsp &nbsp	C) @s.OptionC &nbsp &nbsp &nbsp &nbsp	D) @s.OptionD </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">@s.CorrectOption  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+      }
+
+
+@*     <div class="list-group-item">
+            <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>1. Ali and Nadeem are brothers. Maria and Mariam are sisters. If Ali’s son is Mariam’s brother then what is the relation of Nadeem to Maria? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Brother &nbsp &nbsp &nbsp &nbsp	b) Uncle &nbsp &nbsp &nbsp &nbsp	c) Niece &nbsp &nbsp &nbsp &nbsp	d) Cousin </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) Uncle  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+   <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>2. If the same quantity is added to both numerator and denominator of a proper fraction, the value of new fraction is: </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text">  a) Same as the value of original fraction    <br />	b) Less than the value of original fraction <br />	c) Greater than the value of original fraction   <br />	d) Insufficient Information given </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">  c) Greater than the value of original fraction  </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>3. There are some pigeons and hares in a zoo. If heads are counted these are 200. If legs are counted, they are 560. The number of hares in a zoo are: </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Same as the value of original fraction    <br />	b) Less than the value of original fraction <br />	c) Greater than the value of original fraction   <br />	d) Insufficient Information given </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+         <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) 90 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>4. If the day that rose on the day following day before yesterday was Tuesday, then what day of week will rise day after tomorrow? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Friday  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) Saturday &nbsp &nbsp &nbsp &nbsp &nbsp	c) Sunday &nbsp &nbsp &nbsp &nbsp &nbsp	d) Monday  </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> a) Friday </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+ <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>5. In an examination, Naheed scored more than Zeeshan, Usama scored as much as Dia, Rukhsar scored less than Muneer, Zeeshan scored more than Usama, Muneer scored less than Dia. Who scored the lowest? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Naheed  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) Muneer <br />	c) Rukhsar &nbsp &nbsp &nbsp &nbsp &nbsp	d) Usama  <br /> e) Dia </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) Rukhsar </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+            <form action="/UniTestPucit/universities_test_pucit_logical_reasoning_p1" method="post">
+                <input type="submit" value="Show More" />
+
+            </form>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>6. A man pointing to Abdullah said, ”I have no brother and sister, but that man’s father is my father’s son.” What is he to Abdullah? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Father  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) Son <br />	c) Brother &nbsp &nbsp &nbsp &nbsp &nbsp	d) Grand Father </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) Son </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>7. A soldier drove eastwards for 4 miles and , then drove North for 5 miles, then turned to his left and drove for 1 mile and again turned to his left. Which choice gives direction in which he was driving now…? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) East  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) West <br />	c) North &nbsp &nbsp &nbsp &nbsp &nbsp	d) South </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) South </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>8. Which word does not belong with others? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Noun  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) Preposition <br />	c) Punctuation &nbsp &nbsp &nbsp &nbsp &nbsp	d) Adverb </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) Punctuation </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>9. Find the missing number in this figure: </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 20  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) 26 <br />	c) 32 &nbsp &nbsp &nbsp &nbsp &nbsp	d) 36 </p>
+  
+        <img src="logical-reasoning-picture-questions/pic-q8.png" /> <br />
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) 32 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>10. What comes in place of question mark: </strong> </h5>
+    <img src="logical-reasoning-picture-questions/pic-q10.png" /> <br />
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 5296 &nbsp &nbsp &nbsp &nbsp &nbsp 	b) 6449 <br />	c) 7076 &nbsp &nbsp &nbsp &nbsp &nbsp	d) 8120 </p>
+  
+       
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) 6449</span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+         *@
+  
+  </div>
+</div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            
+            $(".collapsed").hide();
+            $(".collapsed, .expanded").click(function () {
+                $(this).parent().children(".collapsed, .expanded").toggle();
+            });
+
+            
+        });
+
+    </script>
+
+    @*<div style="float:right" class="col-md-7">   
+    <ul class="pagination">
+  <li><a href="universities-test-pucit-logical-reasoning-p1.html">&laquo;</a></li>
+  <li class="active"><a href="universities-test-pucit-logical-reasoning-p1.html">1</a></li>
+  <li><a href="universities-test-pucit-logical-reasoning-p2.html">2</a></li>
+  <li><a href="universities-test-pucit-logical-reasoning-p3.html">3</a></li>
+  <li><a href="universities-test-pucit-logical-reasoning-p2.html">&raquo;</a></li>
+</ul>
+    </div>*@
+
+</body>
+    </html>

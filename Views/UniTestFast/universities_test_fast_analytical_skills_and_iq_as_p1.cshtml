@@ -1,0 +1,393 @@
+﻿@model List<neweadproject.Models.fastquest>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> FAST Test - Analytical Skills & IQ </title>
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="application.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+
+</head>
+<body">
+    
+
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div style="margin-top:10px" class="navbar-header">
+     
+         <img src="logo_mcqprep.png"> </img>      <!-- Navbar may website ka logo insert kia -->
+        
+    </div>
+
+      <div style="margin-top:80px ; float:right" class="navbar-header">
+
+          <a href="/Home/home"> <label style="font-family:Tahoma ; color:white" > Go to Home Page </label> </a>
+
+      </div>
+      </div>
+        </nav>
+
+    
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <h2 style="font-family:Tahoma ; font-size:xx-large ; margin-left:30px ; color:darkblue"> <strong> FAST-NU ENTRY TEST PREPARATION > <label style="font-family:Tahoma ; font-size:medium"> &nbsp ANALYTICAL SKILLS & IQ </label> </strong> </h2>
+        </div>
+    </nav>
+
+<div class="col-md-3">    
+<div class="list-group">
+  <label style="font-family:Tahoma" class="list-group-item active"> <strong> Subjects: </strong> </label>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_analytical_skills_and_iq_as_p1" class="list-group-item"> <strong> Analytical Skills & IQ  ► </strong> </a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_percentage_p1" class="list-group-item">Basic Maths</a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_advance_math_p1" class="list-group-item">Advance Maths</a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_english_analogy_p1" class="list-group-item">English</a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_others" class="list-group-item">Others...</a>
+</div>
+    </div>
+
+        <div class="col-md-9">
+    
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_analytical_skills_and_iq_as_p1" data-toggle="tab"> <strong> Analytical Skills </strong> </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_analytical_skills_and_iq_iq_p1" data-toggle="tab"> IQ </a></li>
+  </ul>
+  
+</div>
+   </div>
+
+    <div class="col-md-6">
+
+        <label style="font-family:Tahoma ; font-size:medium ; margin-bottom:10px ; margin-top:5px"> Practice Questions: </label>
+    
+
+
+        <div class="list-group">
+
+
+             @foreach(var s in Model.Where(i=>i.Category=="AnalyticalSkills"))
+      {
+          <div class="list-group-item">
+            <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> @s.Question  </strong> </h5>
+                 <p style="font-family:Tahoma" class="list-group-item-text"> A) @s.OptionA &nbsp &nbsp &nbsp &nbsp	B) @s.OptionB &nbsp &nbsp &nbsp &nbsp	C) @s.OptionC &nbsp &nbsp &nbsp &nbsp	D) @s.OptionD </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">@s.CorrectOption  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+      }
+
+@*  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> <u>Question 1-4: </u> <br /> John purchased a toy for his young daughter. The toy included nine colourful pieces in the shape of numbers 1 to 9. In examining these pieces, he made the following observations:
+        <ul>
+            <li>One piece is purple and two pieces each are red, green, yellow and blue. </li>
+            <li>The two red pieces are consecutive numbers. </li>
+            <li>The number 4 is green. </li>
+            <li>The two blue pieces are not consecutive numbers. </li>
+            <li>Both the 1 and 9 are yellow.</li>
+            <li>The purple piece is not a number immediately less than or immediately greater than either green piece.</li>
+        </ul>
+        <br /> <br />
+        1. If one of the red pieces is number 3 then what number is the other red piece?
+            </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 2 &nbsp &nbsp &nbsp &nbsp	b) 4 &nbsp &nbsp &nbsp &nbsp	c) 5 &nbsp &nbsp &nbsp &nbsp	d) 6 </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_1"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e1" href="javascript:void(0)" class="expanded_1">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_1">Hide</a>
+
+      
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_1").hide();
+              $(".collapsed_1, #e1").click(function () {
+                  $(this).parent().children(".collapsed_1, #e1").toggle();
+              });
+
+
+          });
+
+    </script>
+
+      
+      <hr />  <!-- ********************************************************************* -->
+
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>2. If the number 5 is green, each of the following could be true except: </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) The purple piece and one of the yellow pieces are consecutive numbers. <br />	b) The number 6 is purple. <br />	c) The two blue pieces and the purple piece are consecutive numbers. <br />	d) The number 2 is red. </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_2"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e2" href="javascript:void(0)" class="expanded_2">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_2">Hide</a>
+
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_2").hide();
+              $(".collapsed_2, #e2").click(function () {
+                  $(this).parent().children(".collapsed_2, #e2").toggle();
+              });
+
+
+          });
+
+    </script>
+
+
+
+
+      <hr />  <!-- ********************************************************************* -->
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>3. If the number 6 is green which of the following could be true? </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) 2 is blue. &nbsp &nbsp &nbsp &nbsp	b) 3 is purple. <br />	c) 5 is red. &nbsp &nbsp &nbsp &nbsp	d) 5 is purple. </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_3"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e3" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_3">Hide</a>
+  
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_3").hide();
+              $(".collapsed_3, #e3").click(function () {
+                  $(this).parent().children(".collapsed_3, #e3").toggle();
+              });
+
+
+          });
+
+    </script>
+
+
+
+       <hr />  <!-- ********************************************************************* -->
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>4. Which of the following if true would enable you to determine the color of every number? </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) 2 is blue. &nbsp &nbsp &nbsp &nbsp	b) 3 is blue. <br />	c) 5 is red. &nbsp &nbsp &nbsp &nbsp	d) 7 is blue. </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_4"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e4" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_4">Hide</a>
+  
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_4").hide();
+              $(".collapsed_4, #e4").click(function () {
+                  $(this).parent().children(".collapsed_4, #e4").toggle();
+              });
+
+
+          });
+
+    </script>
+      
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+  <div class="list-group">
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> <u>Questions 5-9: </u> <br /> The Fairfield Foreign Film Festival (FFFF) plans to show six foreign films one each from Belgium, Canada, Denmark, England, France and Germany. The festival will open on Thursday and will close three days later on Sunday. The each film will be shown once during the festival and the order in which the films will be shown must confirm to the following conditions:
+        <ul>
+            <li> At least one film will be shown each day. </li>
+            <li> No more than three films will be shown on any two consecutive days. </li>
+            <li> The Belgian film must be shown on Saturday. </li>
+            <li> The Canadian film must be shown on same day as another film. </li>
+            <li> The French film must be shown on a day before the German film is shown.</li>
+            <li> The Danish film must be shown on a day after the English film is shown.</li>
+        </ul>
+        <br /> <br />
+        5. If only one film is shown on Thursday, it could be the entry from which of the following country?
+            </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Belgium &nbsp &nbsp &nbsp &nbsp	b) Denmark &nbsp &nbsp &nbsp &nbsp	c) Canada &nbsp &nbsp &nbsp &nbsp	d) France &nbsp &nbsp &nbsp &nbsp e) Germany </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_5"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e5" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_5">Hide</a>
+
+      
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_5").hide();
+              $(".collapsed_5, #e5").click(function () {
+                  $(this).parent().children(".collapsed_5, #e5").toggle();
+              });
+
+
+          });
+
+    </script>
+
+      
+      <hr />  <!-- ********************************************************************* -->
+
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>6.  If the Belgian and French film are shown on the same day, which of the following must be true? </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) The film from Denmark will be shown on Thursday. <br />	b) The film from Denmark will be shown on Friday. <br />	c) The film from Germany will be shown on Thursday. <br />	d) The film from Canada will be shown on Sunday. <br /> e) The film from England will be shown on Sunday. </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_6"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e6" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_6">Hide</a>
+
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_6").hide();
+              $(".collapsed_6, #e6").click(function () {
+                  $(this).parent().children(".collapsed_6, #e6").toggle();
+              });
+
+
+          });
+
+    </script>
+
+
+
+
+      <hr />  <!-- ********************************************************************* -->
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>7. If the director of the festival decides to show two films on Thursday and two on Sunday. How many films would be eligible to be shown on Friday? </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) 1 &nbsp &nbsp &nbsp &nbsp	b) 2 &nbsp &nbsp &nbsp &nbsp c) 3 &nbsp &nbsp &nbsp &nbsp	d) 4 &nbsp &nbsp &nbsp &nbsp e) 5 </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_7"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e7" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_7">Hide</a>
+  
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_7").hide();
+              $(".collapsed_7, #e7").click(function () {
+                  $(this).parent().children(".collapsed_7, #e7").toggle();
+              });
+
+
+          });
+
+    </script>
+
+
+
+       <hr />  <!-- ********************************************************************* -->
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>8. If the English and the German films are shown on the same day, which of the following must be true? </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) The film from England will be shown on Thursday. <br />	b) The film from France will be shown on Friday. <br />	c) The film from Canada will be shown on Saturday. <br />	d) The film from Germany will be shown on Saturday. <br /> e) The film from Canada will be shown on Sunday. </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_8"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e8" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_8">Hide</a>
+  
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_8").hide();
+              $(".collapsed_8, #e8").click(function () {
+                  $(this).parent().children(".collapsed_8, #e8").toggle();
+              });
+
+
+          });
+
+    </script>
+     
+      
+             <hr />  <!-- ********************************************************************* -->
+
+      <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>9. If the film from England is shown on Saturday, which of the following films cannot be shown on the same day as another film? </strong> </h5>
+        
+        <p style="font-family:Tahoma" class="list-group-item-text"> a) Belgian &nbsp &nbsp &nbsp &nbsp	b) Canada &nbsp &nbsp &nbsp &nbsp	c) English &nbsp &nbsp &nbsp &nbsp	d) French &nbsp &nbsp &nbsp &nbsp e) German </p>
+
+      <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed_9"> <br /> <strong style="color:red"> b) Uncle &nbsp &nbsp &nbsp </strong> </span>
+        
+        <a id="e9" href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed_9">Hide</a>
+  
+      <script>
+          $(document).ready(function () {
+
+              $(".collapsed_9").hide();
+              $(".collapsed_9, #e9").click(function () {
+                  $(this).parent().children(".collapsed_9, #e9").toggle();
+              });
+
+
+          });
+
+    </script>*@
+     
+       
+             <script>
+                 $(document).ready(function () {
+
+                     $(".collapsed").hide();
+                     $(".collapsed, .expanded").click(function () {
+                         $(this).parent().children(".collapsed, .expanded").toggle();
+                     });
+
+
+                 });
+
+    </script>
+
+  
+  </div>
+</div>
+
+  
+
+
+
+    
+
+
+
+</body>
+    </html>

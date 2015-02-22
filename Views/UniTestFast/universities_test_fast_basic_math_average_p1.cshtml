@@ -1,0 +1,278 @@
+﻿@model List<neweadproject.Models.fastquest>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> FAST Test - Basic Maths - Average </title>
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="application.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+
+</head>
+<body">
+    
+
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div style="margin-top:10px" class="navbar-header">
+     
+         <img src="logo_mcqprep.png"> </img>      <!-- Navbar may website ka logo insert kia -->
+        
+    </div>
+
+      <div style="margin-top:80px ; float:right" class="navbar-header">
+
+          <a href="/Home/home"> <label style="font-family:Tahoma ; color:white" > Go to Home Page </label> </a>
+
+      </div>
+      </div>
+        </nav>
+
+    
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <h2 style="font-family:Tahoma ; font-size:xx-large ; margin-left:30px ; color:darkblue"> <strong> FAST-NU ENTRY TEST PREPARATION > <label style="font-family:Tahoma ; font-size:medium"> &nbsp BASIC MATHS &nbsp > <label style="font-family:Tahoma ; font-size:small"> &nbsp AVERAGE </label> </label> </strong> </h2>
+        </div>
+    </nav>
+
+    <div class="col-md-3">    
+<div class="list-group">
+   <label style="font-family:Tahoma" class="list-group-item active"> <strong> Subjects: </strong> </label>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_analytical_skills_and_iq_as_p1" class="list-group-item"> Analytical Skills & IQ  </a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_percentage_p1" class="list-group-item"> <strong> Basic Maths </strong> ► </a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_advance_math_p1" class="list-group-item">Advance Maths</a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_english_analogy_p1" class="list-group-item">English</a>
+  <a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_others" class="list-group-item">Others...</a>
+
+</div>
+    </div>
+
+    <div class="col-md-9">
+
+
+
+    
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_percentage_p1" data-toggle="tab">  Percentage </a></li>
+    <li class="active"><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_average_p1" data-toggle="tab"> <strong> Average </strong> </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_sequences_and_series_p1" data-toggle="tab"> Sequences and Series </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_word_problems_p1" data-toggle="tab"> Word Problems </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_age_problems_p1" data-toggle="tab"> Age Problems </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_number_game_p1" data-toggle="tab"> Number Game</a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestFast/universities_test_fast_basic_math_time_distance_p1" data-toggle="tab"> Time Distance</a></li>
+  </ul>
+  
+</div>
+   </div>
+
+    
+
+<div class="col-md-6">
+    <br />
+        <label style="font-family:Tahoma ; font-size:medium ; margin-bottom:10px ; margin-top:5px"> Practice Questions (Average): </label>
+    
+        <div class="list-group">
+
+              @foreach(var s in Model.Where(i=>i.Category=="BMath_Average"))
+      {
+          <div class="list-group-item">
+            <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> @s.Question  </strong> </h5>
+                 <p style="font-family:Tahoma" class="list-group-item-text"> A) @s.OptionA &nbsp &nbsp &nbsp &nbsp	B) @s.OptionB &nbsp &nbsp &nbsp &nbsp	C) @s.OptionC &nbsp &nbsp &nbsp &nbsp	D) @s.OptionD </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">@s.CorrectOption  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+      }
+
+
+@*  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>1. What is the temperature on Sunday if sum of temperatures of other 6 days is 145<sup>o</sup>C and average of the week is 25<sup>o</sup>C? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 30<sup>o</sup>C <br />	b) 26<sup>o</sup>C  <br />	c) 130<sup>o</sup>C <br />	d) 120<sup>o</sup>C </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> a) 30<sup>o</sup>C </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+   <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>2. The average salary for employees in a factory is Rs.2200. All employees are divided in two grades  A and B having an average of Rs.2450 and Rs.1950 respectively. If grade A has 10 employees, then how many employees have grade B?  </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text">  a) 10    <br />	b) 12 <br />	c) 20   <br />	d) 24 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">  *b) 12   </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>3. The average weight of 20 students is decreased by 500 grams when a 40kg boy is replaces with a new boy. What is the weight of that new boy?  </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 30  <br />	b) 35 <br />	c) 40   <br />	d) 50 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+         <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) 50  </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>4. Average age of a group of 10 persons was 25 years while the average rate of another group of 8 persons was 16 years. What is the average age of all 18 persons?  </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 17 <br /> 	b) 19 <br />	c) 21 <br />	d) 23  </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) 21 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+ <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>5. What is the average of all positive integers from  101 to 200 inclusive? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 100.5 <br /> 	b) 150.5 <br />	c) 145.5 <br />	d) 165.5  </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) 150.5 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>6. The average of four numbers is 24. What is the sum of numbers? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 96 	b) 6 <br />	c) 48	 <br />  d) 240 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> a) 96 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>7. The average of 5 numbers is 80. If three of these are 70,80,90. Find the average of other two. </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 90  <br /> 	b) 70 <br />	c) 80 <br />	d) 85 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) 80 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>8. If ‘X’ persons are admitted in a hospital during last 5 years and ‘Y’ persons are recovered out of them during this period. What is the average persons admitted in one year: </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) x/y  <br />	b) (x-y)/5 <br />	c) x/5 <br />	d) (x+y)/5 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) x/5 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>9. From the data of question.8 (immediate above), what is the average of un-recovered persons per year? </strong> </h5>
+ <p style="font-family:Tahoma" class="list-group-item-text"> a) x/y  <br />	b) (x-y)/5 <br />	c) x/5 <br />	d) (x+y)/5 </p>
+ 
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) (x-y)/5 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>10. The average age of a city of 10,000 people is 40 years. The average of half of them is 30 years. The average of remaining half is: </strong> </h5>
+  
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 40 <br /> 	b) 50 <br />	c) 60 <br />	d) 70 </p>
+  
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) 50 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>*@
+</div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".collapsed").hide();
+            $(".collapsed, .expanded").click(function () {
+                $(this).parent().children(".collapsed, .expanded").toggle();
+            });
+
+
+        });
+
+    </script>
+
+   @* <div style="float:right" class="col-md-7">   
+    <ul class="pagination">
+  <li><a href="universities-test-fast-basic-math-average-p1.html">&laquo;</a></li>
+  <li class="active"><a href="universities-test-fast-basic-math-average-p1.html">1</a></li>
+  <li><a href="universities-test-fast-basic-math-average-p2.html">2</a></li>
+  <li><a href="universities-test-fast-basic-math-average-p2.html">&raquo;</a></li>
+</ul>
+    </div>*@
+       
+
+</body>
+    </html>

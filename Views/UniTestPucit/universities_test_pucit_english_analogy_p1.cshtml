@@ -1,0 +1,272 @@
+﻿@model List<neweadproject.Models.pucitquest>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> PUCIT Test - English - Analogy </title>
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="application.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+
+
+</head>
+<body">
+    
+
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div style="margin-top:10px" class="navbar-header">
+     
+         <img src="logo_mcqprep.png"> </img>      <!-- Navbar may website ka logo insert kia -->
+        
+    </div>
+
+      <div style="margin-top:80px ; float:right" class="navbar-header">
+
+          <a href="/Home/home"> <label style="font-family:Tahoma ; color:white" > Go to Home Page </label> </a>
+
+      </div>
+      </div>
+        </nav>
+
+    
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <h2 style="font-family:Tahoma ; font-size:xx-large ; margin-left:30px ; color:darkblue"> <strong> PUCIT ENTRY TEST PREPARATION > <label style="font-family:Tahoma ; font-size:medium"> &nbsp ENGLISH  </label> </strong> </h2>
+        </div>
+    </nav>
+
+    <div class="col-md-3">    
+<div class="list-group">
+  <label style="font-family:Tahoma" class="list-group-item active"> <strong> Subjects: </strong> </label>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_logical_reasoning_p1" class="list-group-item"> Logical Reasoning </a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_analytical_reasoning_p1" class="list-group-item">Analytical Reasoning</a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_percentage_p1" class="list-group-item"> Quantitative Analysis </a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_english_analogy_p1" class="list-group-item"> <strong> English </strong> ► </a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_others" class="list-group-item">Others...</a>
+</div>
+    </div>
+
+    <div class="col-md-9">
+
+
+
+    
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_english_analogy_p1" data-toggle="tab"> <strong> Analogy </strong> </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_english_preposition_p1" data-toggle="tab"> Preposition </a></li>
+  </ul>
+  
+</div>
+   </div>
+
+
+
+<div class="col-md-6">
+    <br />
+
+        <label style="font-family:Tahoma ; font-size:medium ; margin-bottom:10px ; margin-top:5px"> Practice Questions (Analogies): </label> <br />
+        <label style="font-family:Tahoma ; font-size:medium ; margin-bottom:10px ; margin-top:5px"> <i> Select the word in place of question mark. </i> </label>
+    
+<div class="list-group">
+
+
+     @foreach(var s in Model.Where(i=>i.Category=="English_Analogy"))
+      {
+          <div class="list-group-item">
+            <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> @s.Question  </strong> </h5>
+                 <p style="font-family:Tahoma" class="list-group-item-text"> A) @s.OptionA &nbsp &nbsp &nbsp &nbsp	B) @s.OptionB &nbsp &nbsp &nbsp &nbsp	C) @s.OptionC &nbsp &nbsp &nbsp &nbsp	D) @s.OptionD </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">@s.CorrectOption  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+      }
+
+@*  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>1. CUP : LIP :: BIRD : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) BUSH <br />	b) GRASS  <br />	c) FOREST <br />	d) BEAK </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) GRASS </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+    <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>2. REASON : SFBTPO :: THINK : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) SGHMJ <br />	b) UIJOL  <br />	c) UHNKI <br />	d) UJKPM </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) UIJOL </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+      <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>3. ARCHITECT : BUILDING :: SCULPTOR : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) MUSEUM <br />	b) STONE  <br />	c) CHIESEL <br />	d) STATUE </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) STATUE </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+    <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>4. Conference : Chairman :: Newspaper : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Reporter <br />	b) Distributor  <br />	c) Printer <br />	d) None of these </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> a) Reporter </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+      <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>5. Safe : Secure :: Protect : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Lock <br />	b) Sure  <br />	c) Guard <br />	d) Conserve </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) Guard </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+    <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>6. MICROPHONE : LOUD :: MICROSCOPE : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Elogate <br />	b) Investigate  <br />	c) Magnify <br />	d) Examine </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) Magnify </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+      <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>7. MELT : LIQUID :: FREEZE : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) ICE <br />	b) CONDENSE  <br />	c) SOLID <br />	d) FORCE </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) SOLID </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+    <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>8. COLLEGE : STUDENT :: HOSPITAL : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) NURSE <br />	b) DOCTOR  <br />	c) TREATMENT <br />	d) PATIENT </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) PATIENT </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+          <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>9. TREE : FOREST :: GRASS : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) LAWN <br />	b) GARDEN  <br />	c) PARK <br />	d) FIELD </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) GARDEN  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+    <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>10. Cloth : Mill :: Newspaper : ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) Editor <br />	b) Reader  <br />	c) Paper <br />	d) Press </p>
+
+        
+      
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) Press  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>*@
+
+
+
+</div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".collapsed").hide();
+            $(".collapsed, .expanded").click(function () {
+                $(this).parent().children(".collapsed, .expanded").toggle();
+            });
+
+
+        });
+
+    </script>
+
+   @* <div style="float:right" class="col-md-7">   
+    <ul class="pagination">
+  <li><a href="universities-test-pucit-english-analogy-p1.html">&laquo;</a></li>
+  <li class="active"><a href="universities-test-pucit-english-analogy-p1.html">1</a></li>
+  <li><a href="universities-test-pucit-english-analogy-p2.html">2</a></li>
+  <li><a href="universities-test-pucit-english-analogy-p2.html">&raquo;</a></li>
+</ul>
+    </div>*@
+       
+
+</body>
+    </html>

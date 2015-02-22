@@ -1,0 +1,279 @@
+﻿@model List<neweadproject.Models.pucitquest>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> PUCIT Test - Quantitative Analysis - Percentage </title>
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="application.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+
+
+</head>
+<body">
+    
+
+    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div style="margin-top:10px" class="navbar-header">
+     
+         <img src="logo_mcqprep.png"> </img>      <!-- Navbar may website ka logo insert kia -->
+        
+    </div>
+
+      <div style="margin-top:80px ; float:right" class="navbar-header">
+
+          <a href="/Home/home"> <label style="font-family:Tahoma ; color:white" > Go to Home Page </label> </a>
+
+      </div>
+      </div>
+        </nav>
+
+    
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <h2 style="font-family:Tahoma ; font-size:xx-large ; margin-left:30px ; color:darkblue"> <strong> PUCIT ENTRY TEST PREPARATION > <label style="font-family:Tahoma ; font-size:medium"> &nbsp QUANTITATIVE ANALYSIS &nbsp > <label style="font-family:Tahoma ; font-size:small"> &nbsp PERCENTAGE </label> </label> </strong> </h2>
+        </div>
+    </nav>
+
+    <div class="col-md-3">    
+<div class="list-group">
+  <label style="font-family:Tahoma" class="list-group-item active"> <strong> Subjects: </strong> </label>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_logical_reasoning_p1" class="list-group-item"> Logical Reasoning </a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_analytical_reasoning_p1" class="list-group-item">Analytical Reasoning</a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_percentage_p1" class="list-group-item"> <strong> Quantitative Analysis </strong> ► </a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_english_analogy_p1" class="list-group-item">English</a>
+  <a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_others" class="list-group-item">Others...</a>
+</div>
+    </div>
+
+    <div class="col-md-9">
+
+
+
+    
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_percentage_p1" data-toggle="tab"> <strong> Percentage </strong> </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_average_p1" data-toggle="tab"> Average </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_sequences_and_series_p1" data-toggle="tab"> Sequences and Series </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_word_problems_p1" data-toggle="tab"> Word Problems </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_age_problems_p1" data-toggle="tab"> Age Problems  </a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_number_game_p1" data-toggle="tab"> Number Game</a></li>
+    <li><a style="font-family:Tahoma" href="/UniTestPucit/universities_test_pucit_quantitative_analysis_time_distance_p1" data-toggle="tab"> Time Distance</a></li>
+  </ul>
+  
+</div>
+   </div>
+
+    
+
+<div class="col-md-6">
+    <br />
+        <label style="font-family:Tahoma ; font-size:medium ; margin-bottom:10px ; margin-top:5px"> Practice Questions (Percentage): </label>
+    
+        <div class="list-group">
+
+                   
+      @foreach(var s in Model.Where(i=>i.Category=="Quantitative_Percentage"))
+      {
+          <div class="list-group-item">
+            <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong> @s.Question  </strong> </h5>
+                 <p style="font-family:Tahoma" class="list-group-item-text"> A) @s.OptionA &nbsp &nbsp &nbsp &nbsp	B) @s.OptionB &nbsp &nbsp &nbsp &nbsp	C) @s.OptionC &nbsp &nbsp &nbsp &nbsp	D) @s.OptionD </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">@s.CorrectOption  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+      }
+
+
+  @*<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>1. 0.036 in terms of percent is? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 0.36 % <br />	b) 0.036 %  <br />	c) 3.6 % <br />	d) 36 % </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) 3.6 %  </span> <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+   <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>2. What is the percent discount on a trouser marked down from $160 to $120 ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text">  a) 16 %    <br />	b) 25 % <br />	c) 34 %   <br />	d) 40 % </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy">  b) 25 %   </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>3. Diana gets $200 per month as pocket money. She spends 80% of it. How much will she save in a year? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 480   <br />	b) 40 <br />	c) 160   <br />	d) 1920 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+         <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> a) 480 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+  <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>4. In general election of Pakistan in 2013, there are 300000 registered voter in a constituent. A candidate of PML(N) gets 34% votes , another candidate of PTI gets 35%, another candidate of PPP gets 14% votes. An independent candidate gets some votes. How much votes PPP gets ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 102000 votes <br /> 	b) 105000 votes <br />	c) 54000 votes <br />	d) 42000 votes  </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) 42000 votes </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+ <div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>5. The price of a book increased by 10% in June but in July it decreases by 10% . What is its price in the July if its original price was 200 ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 198 <br /> 	b) 200 <br />	c) 220 <br />	d) 210  </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> a) 198 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>6. x% of x is same as 20% of… ? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 20x  &nbsp &nbsp &nbsp &nbsp &nbsp 	b) 20/x<sup>2</sup> <br />	c) x<sup>2</sup>/20	 &nbsp &nbsp &nbsp &nbsp  d) 20x<sup>2</sup> </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> c) x<sup>2</sup>/20 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>7. The population of a town increases at the rate of 15% per year. At present population is 4000. What will it be after 2 years? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 5200  <br /> 	b) 2400 <br />	c) 4800 <br />	d) 5290 </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) 5290 </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>8. 80% of the workers in a company wear jeans. Of these, 20% wear black jeans. What percent of the workers that does not wear black jeans? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 60 %  <br />	b) 64 % <br />	c) 68 % <br />	d) 74% </p>
+
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) 64 % </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>9. Ahmad bought their house for $30,000 and sold for $60,000. What is the percentage of profit? </strong> </h5>
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 50 %  <br />	b) 100 %  <br />	c) 150 % <br />	d) 200 % </p>
+ 
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> d) 200 % </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>
+
+
+<div class="list-group-item">
+    <h5 style="font-family:Tahoma" class="list-group-item-heading"> <strong>10. Price of an article increased from Rs.50 to Rs.55. What is the percentage increase? </strong> </h5>
+  
+    <p style="font-family:Tahoma" class="list-group-item-text"> a) 5 % <br /> 	b) 10 % <br />	c) 50 % <br />	d) 90 % </p>
+  
+        
+        <!--<span class="collapsed">Collap...</span>-->
+        <span class="collapsed"> <br /> <strong style="color:white"> <span style="background-color:navy"> b) 10 % </span>    <br /> <br /> </strong> </span>
+        
+        <a href="javascript:void(0)" class="expanded">View Answer</a>
+        <a href="javascript:void(0)" class="collapsed">Hide</a>
+        
+  
+  </div>*@
+</div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".collapsed").hide();
+            $(".collapsed, .expanded").click(function () {
+                $(this).parent().children(".collapsed, .expanded").toggle();
+            });
+
+
+        });
+
+    </script>
+
+    @*<div style="float:right" class="col-md-7">   
+    <ul class="pagination">
+  <li><a href="universities-test-pucit-quantitative-analysis-percentage-p1.html">&laquo;</a></li>
+  <li class="active"><a href="universities-test-pucit-quantitative-analysis-percentage-p1.html">1</a></li>
+  <li><a href="universities-test-pucit-quantitative-analysis-percentage-p2.html">2</a></li>
+  <li><a href="universities-test-pucit-quantitative-analysis-percentage-p2.html">&raquo;</a></li>
+</ul>
+    </div>*@
+       
+
+</body>
+    </html>

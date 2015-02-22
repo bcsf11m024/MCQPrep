@@ -1,0 +1,270 @@
+﻿@model neweadproject.Models.pucitquest
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> MCQPrep - Admin Panel </title>
+
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="application.js"></script>
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- ****** WOW SLIDER PORTION -->
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Image carousel" />
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine2/style.css" />
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+
+
+
+</head>
+
+    <body style="background-color:darkblue">
+
+        <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+     
+        <a href="index"> <img src="logo_mcqprep.png"> </img> </a>      <!-- Navbar may website ka logo insert kia -->
+    </div>
+      </div>
+        </nav>
+
+        @*  -------------------------------------------------------------------------------------------*@
+
+
+         <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title"> <strong> Update Question </strong> </div>
+                       
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <form action="/AdminEnd/FinallyUpdateQuestionPucit" method="post">
+
+                        @* <div class="form-group">*@
+                            <div style="margin-bottom: 10px" class="col-md-9">
+                              <label for="category" class="col-md-3 control-label"> Category: </label>
+                       
+
+                                
+                                @*        <input id="category" type="text" class="form-control" name="category" placeholder="Enter Category..."/>*@
+                            
+                            @*    @Html.TextBoxFor(m => m.Category);*@
+                                    
+
+
+
+
+
+
+
+
+                                <div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios1" 
+         value="Logical"/> Logical Reasoning
+   </label>
+</div>
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios2" 
+         value="Analytical"/>
+         Analytical Reasoning
+   </label>
+</div>
+
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios3" 
+         value="Quantitative_Age"/> Quantitative Analysis - Age Problems
+   </label>
+</div>
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios4" 
+         value="Quantitative_Number"/>
+        Quantitative Analysis - Numbers Game
+   </label>
+</div>
+
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios5" 
+         value="Quantitative_Percentage"/> Quantitative Analysis - Percentage
+   </label>
+</div>
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios6" 
+         value="Quantitative_Sequence"/>
+        Quantitative Analysis - Sequence and Series
+   </label>
+</div>
+
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios7" 
+         value="Quantitative_TimeDistance"/>   Quantitative Analysis - Time Distance Problems
+
+   </label>
+</div>
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios8" 
+         value="Quantitative_Word"/>
+        Quantitative Analysis - Word Problems
+   </label>
+</div>
+
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios9" 
+         value="English_Analogy"/>
+        English - Analogy
+   </label>
+</div>
+
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios10" 
+         value="English_Preposition"/>      English - Prepositions
+
+   </label>
+</div>
+<div class="radio">
+   <label>
+      <input type="radio" name="category" id="optionsRadios11" 
+         value="others"/>
+      Others...
+   </label>
+</div>
+
+
+
+
+
+                          
+                                    <label for="question" class="col-md-3 control-label" >Old Question: </label>
+                                    
+                          @*   @Html.LabelFor(m=>m.Question)*@
+
+
+                                  
+                                        <input id="oldquestion" type="text" class="form-control" name="oldquestion" placeholder="Enter Old Question..."/>
+                                         @* This area is commented just to use/alternative of HTML helper  *@
+                          @*   @Html.TextBoxFor(m=>m.Question)*@
+                             
+                             <br /> <br />
+                             <br /> <br />
+
+                                 <label for="question" class="col-md-3 control-label" >New Question: </label>
+                                    
+                          @*   @Html.LabelFor(m=>m.Question)*@
+
+
+                                 
+                                        <input id="newquestion" type="text" class="form-control" name="newquestion" placeholder="Enter New Question..."/>
+                                   
+
+                             <label for="op1" class="col-md-3 control-label">Option A </label>
+
+                            @* @Html.LabelFor(m => m.OptionA)*@
+                                    
+                                        <input id="op1" type="text" class="form-control" name="op1" placeholder="Option A"/>
+                                  
+
+                          @*   @Html.TextBoxFor(m=>m.OptionA)*@
+
+                             <label for="op2" class="col-md-3 control-label">Option B </label>
+
+                            @* @Html.LabelFor(m=>m.OptionB)*@
+
+                                   
+                                        <input id="op2" type="text" class="form-control" name="op2" placeholder="Option B"/>
+                                   
+
+                            @* @Html.TextBoxFor(m=>m.OptionB)*@
+
+
+                            <label for="op3" class="col-md-3 control-label">Option C </label>
+
+                           @*  @Html.LabelFor(m=>m.OptionC)*@
+
+                                   
+                                        <input id="op3" type="text" class="form-control" name="op3" placeholder="Option C"/>
+                                  
+
+
+                        @*     @Html.TextBoxFor(m=>m.OptionC)*@
+
+                             <label for="op4" class="col-md-3 control-label">Option D </label>
+
+
+                            @* @Html.LabelFor(m=>m.OptionD)*@
+                                   
+                                        <input id="op4" type="text" class="form-control" name="op4" placeholder="Option D"/>
+                                 
+
+                           @*  @Html.TextBoxFor(m=>m.OptionD)*@
+
+
+                            <label for="op_correct" class="col-md-3 control-label">Correct Option </label>
+
+                           @*  @Html.LabelFor(m=>m.CorrectOption)*@
+
+                                   
+                                        <input id="op_correct" type="text" class="form-control" name="op_correct" placeholder="Correct Option"/>
+                                 
+
+
+                           @*  @Html.TextBoxFor(m=>m.CorrectOption)*@
+
+                          
+                             
+                             
+
+                                 <div  style="margin-bottom: 15px ; float:right" class="col-md-3 control-label">
+                                     @*<button style="float:right" id="btn-add" type="submit" class="btn btn-success">  <strong> Add </strong> </button>*@
+
+                                     <input type="submit" value="Update" />
+                              </div>
+                                  </div>
+                             </form>
+                                
+
+                                </div>
+
+                    </div>  
+        </div>
+                         </div>
+    
+                         
+            
+             <hr />
+
+
+    <footer>
+  <p style="color:white" align="center">2014-2015 by Muhammad Haroon (BCSF11M024). All Rights Reserved.</p>
+  <p style="color:white" align="center"> <strong>Contact us: </strong> <a href="mailto:bcsf11m024@pucit.edu.pk">
+  bcsf11m024@pucit.edu.pk</a> </p>
+</footer>
+
+
+    </body>
+
+
+    </html>
